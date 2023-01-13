@@ -19,8 +19,14 @@
   src: url('font/Hack-Italic.woff2') format('woff2'),
        url('font/Hack-Italic.woff') format('woff');
   font-weight: normal;
-  color: #abb2bf;
-  background: #282c34;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('font/Hack-BoldItalic.woff2') format('woff2'),
+       url('font/Hack-BoldItalic.woff') format('woff');
+  font-weight: bold;
   font-style: italic;
 }
 
