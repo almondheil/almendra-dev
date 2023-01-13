@@ -70,18 +70,28 @@ main {
   height: calc(var(--main-height) - var(--cmd-height));
   overflow: auto;
   margin: auto;
-  margin-top: calc((100% - var(--main-height))/2);
+  margin-top: calc((100% - var(--main-height))/4);
   border: thin solid #8d8d8d;
 }
 
-
+/* Be a little responsive and do one column on a phone
+ * Not making any other adjustments though */
 .grid-container {
   display: grid;
   gap: 0px 0px;
   grid-template-areas:
-    "info     info      "
-    "about    experience"
-    "projects experience";
+  "info     info      "
+  "about    experience"
+  "projects experience";
+}
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+    "info"
+    "about"
+    "experience"
+    "projects"
+  }
 }
 
 #command-area {
