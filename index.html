@@ -8,16 +8,18 @@
   </head>
   <body>
     <section id="command-area">
-      <div class="padded">
-        <p>$ cat RAYHEIL.md</p> 
-      </div>
+      <p class=padded>$ cat RAYHEIL.md</p> 
     </section>
     <main>
       <div class="mid grid-container">
         <section id="info" itemscope itemtype="http://schema.org/Person">
           <div class="padded">
             <h1 itemprop="name">Ray Heil
-              <a class=resume rel="me" href="./RayHeil-Resume-2023.pdf">resume</a>
+              <div class="links">
+                open:
+                <a itemprop="pubkey" rel="me" href="./id_rsa.pub" download>pubkey</a>
+                <a itemprop="resume" rel="me" href="./RayHeil-Resume-2023.pdf" download>resume</a>
+              </div>
             </h1>
             <address>
               <ul class="contactinfo">

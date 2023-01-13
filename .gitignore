@@ -1,5 +1,8 @@
-# Ignore the PDF resume I have uploaded
+# PDF resume I have uploaded
 RayHeil-Resume-*.pdf
 
-# Ignore the custom fonts in the font/ directory
+# Custom fonts in the font/ directory
 font/
+
+# SSH Public Key
+id_rsa.pub

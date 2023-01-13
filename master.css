@@ -271,8 +271,8 @@ p.achievments {
   font-style: italic;
 }
 
-.resume {
-  font-weight: normal;
-  font-size: 1rem;
+.links {
   float: right;
+  font-size: 1rem;
+  font-weight: normal;
 }
