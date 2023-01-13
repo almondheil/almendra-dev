@@ -11,7 +11,7 @@
   src: url('font/Hack-Bold.woff2') format('woff2'),
        url('font/Hack-Bold.woff') format('woff');
   font-weight: bold;
-  font-style: bold;
+  font-style: normal;
 }
 
 @font-face {
@@ -19,6 +19,8 @@
   src: url('font/Hack-Italic.woff2') format('woff2'),
        url('font/Hack-Italic.woff') format('woff');
   font-weight: normal;
+  color: #abb2bf;
+  background: #282c34;
   font-style: italic;
 }
 
@@ -27,11 +29,11 @@
 }
 
 body, html {
-  font-family: 'Hack', monospace, monospace; 
   margin: 0px;
   padding: 0px;
-  background: #282c34;
+  font-family: 'Hack', monospace, monospace; 
   color: #abb2bf;
+  background: #282c34;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -54,7 +56,7 @@ body {
 :root {
   --main-width: 80%;
   --main-height: 85%;
-  --cmd-height: 50pt;
+  --cmd-height: 40pt;
 }
 
 main {
@@ -66,32 +68,34 @@ main {
   border: thin solid #8d8d8d;
 }
 
+
 .grid-container {
   display: grid;
   gap: 0px 0px;
   grid-template-areas:
-    "info info"
-    "about experience"
+    "info     info      "
+    "about    experience"
     "projects experience";
 }
 
 #command-area {
   height: var(--cmd-height);
+  margin: auto;
   background: #282c34;
   color: #8d8d8d;
-  margin: auto;
 }
 
 section {
   overflow: hidden;
   text-align: justify;
-
+}
 
 .padded {
   padding: 0.4em;
 }
 
 #info, #experience, #projects, #skills, #education {
+  font-family: 'Hack', monospace, monospace;
 }
 #education, #skills, #experience, #projects {
   border-top: none;
@@ -117,14 +121,20 @@ div.mid {
 
 section#experience {
   grid-area: experience;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
 }
 
 section#about {
   grid-area: about;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
 }
 
 section#projects {
   grid-area: projects;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
 }
 
 h1,h2,h3,h4,h5,h6 {
