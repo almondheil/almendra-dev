@@ -103,7 +103,6 @@ main {
 
 section {
   overflow: hidden;
-  text-align: justify;
 }
 
 .padded {
@@ -234,30 +233,6 @@ a:visited {
 
 section#skills {
   clear: both;
-}
-
-ul.languages {
-  margin-bottom: 18pt;
-}
-
-ul.languages, ul.oses {
-  list-style: none;
-  clear: both;
-}
-
-ul.languages li:before, ul.oses li:before {
-  display: none;
-}
-
-ul.languages li + li, ul.oses li + li {
-  margin-left: 4pt;
-}
-
-ul.languages li, ul.oses li {
-  position: inherit;
-  list-style: none;
-  float: left;
-  margin: 0px;
 }
 
 .cf:before {
