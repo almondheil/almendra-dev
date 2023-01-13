@@ -1,0 +1,5 @@
+# Ignore the PDF resume I have uploaded
+RayHeil-Resume-*.pdf
+
+# Ignore the custom fonts in the font/ directory
+font/
