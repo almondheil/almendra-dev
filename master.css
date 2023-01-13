@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'Hack';
+    src: url('font/Hack-Regular.woff2') format('woff2'),
+         url('font/Hack-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hack';
+    src: url('font/Hack-Bold.woff2') format('woff2'),
+         url('font/Hack-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Hack';
+    src: url('font/Hack-Italic.woff2') format('woff2'),
+         url('font/Hack-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Hack', monospace, monospace; 
+}
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  background: #282c34;
+  color: #abb2bf;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-size: 12pt;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: inherit;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flow-root;
+}
+
+:root {
+  --main-width: 80%;
+  --main-height: 85%;
+  --cmd-height: 50pt;
+}
+
+main {
+    width: var(--main-width);
+    height: calc(var(--main-height) - var(--cmd-height));
+    overflow: auto;
+    margin: auto;
+    margin-top: calc((100% - var(--main-height))/2);
+    border: thin solid #8d8d8d;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0px 0px;
+    grid-template-areas:
+    "info info"
+    "about experience"
+    "projects experience";
+}
+
+#command-area {
+    height: var(--cmd-height);
+    background: #282c34;
+    color: #8d8d8d;
+    margin: auto;
+}
+
+section {
+    overflow: hidden;
+    text-align: justify;
+}
+
+.padded {
+    padding: 0.4em;
+}
+
+#info, #experience, #projects, #skills, #education {
+}
+#education, #skills, #experience, #projects {
+    border-top: none;
+}
+#info, #skills, #experience, #projects {
+    border-bottom: none;
+}
+#experience {
+    border-right: none;
+}
+#projects {
+    border-left: none;
+}
+
+section#info {
+    grid-area: info;
+}
+
+div.mid {
+    height: auto;
+    overflow: hidden;
+}
+
+section#experience {
+    grid-area: experience;
+}
+
+section#about {
+    grid-area: about;
+}
+
+section#projects {
+    grid-area: projects;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 12pt;
+}
+
+h1 {
+    font-weight: bold;
+    letter-spacing: 1.2pt;
+}
+
+h2 {
+    font-weight: bold;
+    margin-top: 4pt;
+    letter-spacing: 1pt;
+}
+
+address {
+    font-style: normal;
+}
+
+ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+li {
+    position: relative;
+}
+
+li::before {
+    content: ">";
+    left: -1.2em;
+    position: absolute;
+}
+
+#info address {
+    display: inline-block;
+}
+.contactinfo {
+    list-style: none;
+    display: inline-block;
+}
+.contactinfo li {
+    display: inline-block;
+    position: relative;
+}
+.contactinfo li::before {
+    display: none;
+}
+
+p.timeplace > address {
+    display: inline !important;
+}
+
+.jobdescription, .description {
+    margin-top: 2pt;
+    margin-left: 0.8em;
+    font-size: 10pt;
+}
+
+section#info .description {
+    margin-top: 1em;
+}
+
+.jobtitle {
+    font-style: italic;
+}
+
+li + li {
+    margin-top: 4pt;
+}
+
+a {
+    color: #61afef;
+}
+
+a:visited {
+    color: #c678dd;
+}
+
+section#skills {
+    clear: both;
+}
+
+ul.languages {
+    margin-bottom: 18pt;
+}
+
+ul.languages, ul.oses {
+    list-style: none;
+    clear: both;
+}
+
+ul.languages li:before, ul.oses li:before {
+    display: none;
+}
+
+ul.languages li + li, ul.oses li + li {
+    margin-left: 4pt;
+}
+
+ul.languages li, ul.oses li {
+    position: inherit;
+    list-style: none;
+    float: left;
+    margin: 0px;
+}
+
+.cf:before {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+p.achievments {
+    margin-top: 4pt;
+    font-size: 10pt;
+}
+
+.education, .award {
+    font-style: italic;
+}
+
+.resume {
+  font-weight: normal;
+  font-size: 1rem;
+  float: right;
+}
