@@ -8,7 +8,7 @@
   </head>
   <body>
     <section id="command-area">
-      <p class=padded>$ cat RAYHEIL.md</p> 
+      <p class=padded>$ cat rayheil.md</p> 
     </section>
     <main>
       <div class="mid grid-container">
@@ -31,22 +31,25 @@
         </section>
         <section id="about" itemscope itemtype="http://schema.org/ItemList">
           <div class="padded">
-            <h2 itemprop="name">About</h2>
-            <ul>
-              <li itemprop="itemListElement">
-                <p>
-                Hi there! 
-                </p>
-                <p>
-                My name is Ray, and I like playing with computers.
-                <p>
-              </li>
-              <li itemprop="itemListElement">
-                <p>
-                I have experience in TODO FILL IT IN 
-                </p>
-              </li>
-            </ul>
+            <h2 itemprop="name">About Me</h2>
+            <div class="indented" itemtype="http://schema.org/Text">
+              <p>
+              Hi there!  My name is Ray, and I like playing around with tech.
+              I'm an undergraduate student at <a href="https://www.grinnell.edu/">Grinnell College</a>
+              majoring in Computer Science and dabbling in Pure Math.
+              </p>
+              <p>
+              I am comfortable programming in C, Java, and Python on desktop
+              Linux systems.  I also am familiar with managing Linux servers
+              for personal use.
+              </p>
+              <p>
+              I'm especially interested in system administration, but I often
+              enjoy describing, modeling, and solving various scientific and
+              mathematical problems using code. 
+              </p>
+            </div>
+          </div>
         </section>
         <section id="experience" itemscope itemtype="http://schema.org/ItemList">
           <div class="padded">
@@ -54,19 +57,69 @@
             <ul>
               <li itemprop="itemListElement">
                 <p class="timeplace">
-                <time datetime="1900">1900</time>-<time datetime="present">now</time>
-                <span class="employer"><a href="https://example.com">Fake Company</a></span>
+                <time datetime="2022-07">Jul</time>-<time datetime="2022-11">Nov 2022</time>
+                <span class="employer"><a href="https://lanl.gov/">Los Alamos National Labs</a></span>
                 </p>
                 <p class="jobinfo">
-                <p class="jobtitle">Big Important Person</p>
+                <p class="jobtitle">Undergraduate Intern</p>
                 <p class="jobdescription">
-                Spectacular description of what I did at the job, etc
+                Research and modeles coalescence to infer transmission history
+                in HIV transmission pairs. Worked as part of a team of
+                professional scientists, presented findings to a scientific
+                audience.
                 </p>
               </li>
-              <!-- Add more as needed! -->
               <li itemprop="itemListElement">
-                <p>
-                Just continue to add them in! This will be useful in no time :)
+                <p class="timeplace">
+                <time datetime="2021-07">Jul</time>-<time datetime="2021-08">Aug 2021</time>
+                <span class="employer"><a href="https://markgalassi.codeberg.page/small-courses-html/agent-based-modeling-basics/agent-based-modeling-basics.html">Serious Programming Courses Book</a></span>
+                </p>
+                <p class="jobinfo">
+                <p class="jobtitle">Chapter Author</p>
+                <p class="jobdescription">
+                Wrote an instructional book chapter walking students through
+                the process of creating an agent-based model in Python.
+                Evaluated chapter on its effectiveness for teaching and
+                improved it based on student feedback.
+                </p>
+              </li>
+              <li itemprop="itemListElement">
+                <p class="timeplace">
+                <time datetime="2021-06">Jun</time>-<time datetime="2021-07">Jul 2021</time>
+                <span class="employer"><a href="https://computinginresearch.org/">Institute for Computing in Research</a></span>
+                </p>
+                <p class="jobinfo">
+                <p class="jobtitle">Intern</p>
+                <p class="jobdescription">
+                Worked closely with a mentor to develop research and coding
+                skills. Created an agent-based simulation of predator-prey
+                interactions.
+                </p>
+              </li>
+              <li itemprop="itemListElement">
+                <p class="timeplace">
+                <time datetime="2020-07">Jul</time>-<time datetime="2020-08">Aug 2020</time>
+                <span class="employer"><a href="https://swaia.org/">Southwestern Association for Indian Arts</a></span>
+                </p>
+                <p class="jobinfo">
+                <p class="jobtitle">Web Support Volunteer</p>
+                <p class="jobdescription">
+                Worked remotely with artists participating in the 2020 Virtual
+                Indian Market, helping them set up websites to display and sell
+                their artworks. 
+                </p>
+              </li>
+              <li itemprop="itemListElement">
+                <p class="timeplace">
+                <time datetime="2020-06">Jun 2020</time>
+                <span class="employer">Khan Academy - Doing Great Project Evaluations</span>
+                </p>
+                <p class="jobinfo">
+                <p class="jobtitle">Peer Project Evaluator</p>
+                <p class="jobdescription">
+                Evaluated introductory student JavaScript projects on Khan
+                Academy. Gave feedback on failed projects and flagged
+                plagiarized code. 
                 </p>
               </li>
             </ul>
@@ -78,21 +131,23 @@
             <ul>
               <li itemprop="itemListElement">
                 <p class="projectlink">
+                <a href="https://github.com/MolEvolEpid/ray-summer-phylogeny-practice">
+                  https://github.com/MolEvolEpid/ray-summer-phylogeny-practice
+                </a>
+                </p>
+                <p class="description">
+                Coalescent model of HIV transmission pairs. Repository for
+                2022 Los Alamos National Labs Undergraduate Internship. 
+                </p>
+              </li>
+              <li itemprop="itemListElement">
+                <p class="projectlink">
                 <a href="https://github.com/rayheil/echelon-c">
                   https://github.com/rayheil/echelon-c
                 </a>
                 </p>
                 <p class="description">
                 A matrix echelon form calculator written in C.
-                </p>
-              </li>
-              <!-- Then just add more! -->
-              <li itemprop="itemListELement">
-                <p>
-                Just add more!
-                </p>
-                <p class="description">
-                This is gonna work, it'll just take some effort.
                 </p>
               </li>
             </ul>

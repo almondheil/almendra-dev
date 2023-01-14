@@ -74,26 +74,6 @@ main {
   border: thin solid #8d8d8d;
 }
 
-/* Be a little responsive and do one column on a phone
- * Not making any other adjustments though */
-.grid-container {
-  display: grid;
-  gap: 0px 0px;
-  grid-template-areas:
-  "info     info      "
-  "about    experience"
-  "projects experience";
-}
-@media screen and (max-width: 768px) {
-  .grid-container {
-    grid-template-areas:
-    "info"
-    "about"
-    "experience"
-    "projects"
-  }
-}
-
 #command-area {
   height: var(--cmd-height);
   margin: auto;
@@ -107,6 +87,10 @@ section {
 
 .padded {
   padding: 0.4em;
+}
+
+.indented {
+  padding-left: 3em;
 }
 
 #info, #experience, #projects, #skills, #education {
@@ -126,7 +110,6 @@ section {
 }
 
 section#info {
-  grid-area: info;
 }
 
 div.mid {
@@ -135,22 +118,24 @@ div.mid {
 }
 
 section#experience {
-  grid-area: experience;
-  padding-bottom: 1000px;
-  margin-bottom: -1000px;
+  float: right;
+  width: 50%;
 }
-
 section#about {
-  grid-area: about;
-  padding-bottom: 1000px;
-  margin-bottom: -1000px;
+  float: left;
+  width: 50%;
+}
+section#projects {
+  float: left;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* For tablets and mobile phones */
+  section#experience, section#about, section#projects {
+    width: 100%;
+  }
 }
 
-section#projects {
-  grid-area: projects;
-  padding-bottom: 1000px;
-  margin-bottom: -1000px;
-}
 
 h1,h2,h3,h4,h5,h6 {
   font-size: 12pt;
