@@ -1,0 +1,8 @@
+# PDF resume I have uploaded
+RayHeil-Resume*.pdf
+
+# Custom fonts in the font/ directory
+font/
+
+# SSH Public Key
+jelly-donut.pub
