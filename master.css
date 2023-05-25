@@ -38,13 +38,8 @@ body, html {
   margin: 0px;
   padding: 0px;
   font-family: 'Hack', monospace, monospace; 
-<<<<<<< HEAD
   color: #cdd6f4;
   background: #1e1e2e;
-=======
-  color: #abb2bf;
-  background: #282c34;
->>>>>>> 8c3b3192b2e5a5a05950e3cda92b9f441b42a6a9
 }
 
 body, h1, h2, h3, h4, h5, h6 {
