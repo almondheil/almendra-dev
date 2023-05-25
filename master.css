@@ -1,43 +1,11 @@
-@font-face {
-  font-family: 'Hack';
-  src: url('font/Hack-Regular.woff2') format('woff2'),
-       url('font/Hack-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Hack';
-  src: url('font/Hack-Bold.woff2') format('woff2'),
-       url('font/Hack-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Hack';
-  src: url('font/Hack-Italic.woff2') format('woff2'),
-       url('font/Hack-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Hack';
-  src: url('font/Hack-BoldItalic.woff2') format('woff2'),
-       url('font/Hack-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
 * {
   box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace, monospace; 
 }
 
 body, html {
   margin: 0px;
   padding: 0px;
-  font-family: 'Hack', monospace, monospace; 
   color: #cdd6f4;
   background: #1e1e2e;
 }
