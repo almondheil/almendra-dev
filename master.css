@@ -28,9 +28,9 @@ body {
 }
 
 :root {
-  --main-width: 80%;
-  --main-height: 85%;
-  --cmd-height: 40pt;
+  --main-width: 90%;
+  --main-height: 95%;
+  --cmd-height: 35pt;
 }
 
 main {
