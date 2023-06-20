@@ -1,3 +1,3 @@
-# rayheil.com
+# almendra.dev
 
- Git repository for my professional website, https://rayheil.com 
+Git repo for my website
