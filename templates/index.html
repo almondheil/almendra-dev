@@ -54,7 +54,6 @@
       {% for e in experience %}
         <li itemprop="itemListElement">
           <p class="timeplace">
-            <!-- Render formatted date as HTML -->
             {{ e['formatted_date'] | safe }}
             <span class="employer"><a href="{{ e['url'] }}" target="_blank">{{ e['name'] }}</a></span>
           </p>
