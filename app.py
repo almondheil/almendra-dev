@@ -33,40 +33,24 @@ def index():
     # render the page
     return render_template('index.html', projects=projects,
                            experience=experience)
+#
+# Public Keys
+#
+@app.route('/public_keys')
+def public_keys():
+    conn = get_db_connection()
+    keys = conn.execute("SELECT * FROM keys").fetchall()
+    conn.close()
+    return render_template('public_keys.html', keys=keys)
+
+#
+# Resume
+#
+@app.route('/resume')
+def resume():
+    return render_template('resume.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
-
-# TODO: Maybe add these pages? Still not sure they're necessary.
-"""
-#
-# All work experience
-#
-@app.route('/experience')
-def experience():
-    conn = get_db_connection()
-    experience = conn.execute("SELECT * FROM experience").fetchall()
-    conn.close()
-    return render_template('experience.html', experience=experience)
-
-#
-# All projects
-#
-@app.route('/projects')
-def projects():
-    conn = get_db_connection()
-    projects = conn.execute("SELECT * FROM projects").fetchall()
-    conn.close()
-    return render_template('projects.html', projects=projects)
-
-#
-# Keys
-#
-@app.route('/keys')
-def keys():
-    conn = get_db_connection()
-    keys = conn.execute("SELECT * FROM keys").fetchall()
-    conn.close()
-    return render_template('keys.html', keys=keys)
-"""
