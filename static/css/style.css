@@ -1,86 +1,229 @@
+/******************************************************************************
+ * Global styles                                                              *
+ ******************************************************************************/
+
 * {
   box-sizing: border-box;
   font-family: 'Source Code Pro', monospace, monospace; 
-
-	/* Reset everything to keep navbar flush to top 
-	 * and reduce formatting irregularities */
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
 }
 
 body {
-	width: 100%;
+  width: 100%;
   height: 100vh;
   position: relative;
   display: flow-root;
-	background-color: yellow;
 }
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  color: #cdd6f4;
+  background: #1e1e2e;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-size: 12pt;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: inherit;
+}
+
+
+/******************************************************************************
+ * Page layout (wacky and strange)
+ ******************************************************************************/
 
 :root {
-	--nav-height: 35pt;
+	/* Height of the navbar and footer, fixed. */
+	--nav-height: 40pt;
+	--footer-height: 20pt;
+
+	/* Height and width of the main content.
+	 * - Height is calculated to exclude nav and footer
+	 * - Width is from the page width */
 	--main-height: 90%;
 	--main-width:  90%;
-	--footer-height: 20pt;
 }
 
-/* Set up nav, footer, and .content to all appear on one
- * view of the page. */
 nav {
 	height: var(--nav-height);
 	margin: auto;
-	background-color: blue;
+}
+main {
+	height: calc(var(--main-height) - var(--nav-height) - var(--footer-height));
+	width: var(--main-width);
+	margin: auto;
+
+	/* Allow scrolling overflow content within */
+	overflow: auto;
+	margin-top: calc((100% - var(--main-height))/4);
+	border: thin solid #4A4A57;
 }
 footer {
-	/* Right now the footer shows up with a LITTLE space after it
-	 * before the page ends, but I'm gonna just let it be for now. */
 	height: var(--footer-height);
 	margin: auto;
-	background-color: red;
 
+	/* Anchor to the bottom of the page */
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	margin: 10px;
+	width: calc(100% - 10px);
 } 
-.content {
-	height: calc(var(--main-height) - var(--nav-height) - var(--footer-height));
-	width: var(--main-width);
-	/* allow scrolling overflow content within */
-	overflow: auto;
-	margin: auto;
-	margin-top: calc((100% - var(--main-height))/4);
-	border: thin solid #4A4A57;
-	background-color: green;
+
+div.content {
+  height: auto;
+  overflow: hidden;
 }
+
+
+/******************************************************************************
+ * Section formatting                                                         *
+ ******************************************************************************/
 
 section {
-	overflow: hidden;
+  overflow: hidden;
 }
 
-.projects {
+section.experience {
+  float: right;
+  width: 50%;
 }
-.experience {
+section.about {
+  float: left;
+  width: 50%;
 }
-.about {
+section.projects {
+  float: left;
+  width: 50%;
 }
-.info {
+/* For tablets and mobile phones */
+@media only screen and (max-width: 768px) {
+  section.experience, section.about, section.projects {
+    width: 100%;
+  }
 }
+
+
+/******************************************************************************
+ * General formatting                                                         *
+ ******************************************************************************/
 
 .padded {
-	padding: 0.4em;
-}
-.indented {
-	padding-left: 1em;
-}
-.dim {
+  padding: 0.4em;
 }
 
+.indented {
+  padding-left: 1em;
+}
+
+.dim {
+  color: #a5acc5;
+}
+
+/* 404 error */
 h1#err404 {
 	color: red;
 	font-size: 30pt;
+}
+
+
+/******************************************************************************
+ * A whole bunch of font stuff                                                *
+ ******************************************************************************/
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 12pt;
+}
+
+h1 {
+  font-weight: bold;
+  letter-spacing: 1.2pt;
+}
+
+h2 {
+  font-weight: bold;
+  margin-top: 4pt;
+  letter-spacing: 1pt;
+}
+
+address {
+  font-style: normal;
+}
+
+ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+li {
+  position: relative;
+}
+
+li::before {
+  content: ">";
+  left: -1.2em;
+  position: absolute;
+}
+
+.info address {
+  display: inline-block;
+}
+.contactinfo {
+  list-style: none;
+  display: inline-block;
+}
+.contactinfo li {
+  display: inline-block;
+  position: relative;
+}
+.contactinfo li::before {
+  display: none;
+}
+
+.navlinks li {
+  display: inline;
+}
+.navlinks li::before {
+  display: none;
+}
+
+.jobdescription, .description {
+  margin-top: 2pt;
+  margin-left: 0.8em;
+  font-size: 10pt;
+}
+
+section.info .description {
+  margin-top: 1em;
+}
+
+.jobtitle {
+  font-style: italic;
+}
+
+li + li {
+  margin-top: 4pt;
+}
+
+a:link {
+  color: #89b4fa;
+}
+a:visited {
+  color: #cba6f7;
+}
+a:hover {
+  color: #f4a6f7;
+}
+a:active {
+  color: #f5c2e7;
+}
+
+.links {
+  float: right;
+  font-size: 1rem;
+  font-weight: normal;
 }
