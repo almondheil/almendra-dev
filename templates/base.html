@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Local stylesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="screen" charset="utf-8">
 
     <title>
       {% if title %}
@@ -38,8 +38,7 @@
       {% block content %} {% endblock %}
     </main>
     <footer class=footer>
-      © 2023 almond heil
+      © 2023 almond heil, colors from <a href="https://github.com/catppuccin/catppuccin" target="_blank">catppuccin mocha</a> colorscheme
     </footer>
   </body>
 </html>
-

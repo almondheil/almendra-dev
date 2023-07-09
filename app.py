@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 from utils import dates2range
 
 app = Flask(__name__)
@@ -50,10 +50,12 @@ def public_keys():
 #
 @app.route('/resume')
 def resume():
-    return render_template('resume.html', title='resume')
+    return send_file('static/pdf/AlmondHeil-Resume.pdf')
 
-
+#
+# 404 error page
+#
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', title='404',
-                           fakepath='/dev/null'), 404
+                           fakepath='/'), 404

@@ -101,9 +101,33 @@ section.projects {
   float: left;
   width: 50%;
 }
+section#sshkeys {
+  float: left;
+  width: 100%;
+}
+section#gpgkeys {
+  float: left;
+  width: 50%;
+}
+section#asciiart {
+  float: right;
+  width: 50%;
+}
+section#asciiart img {
+  position: relative;
+  float: left;
+  max-height: 100%;
+  width: auto;
+}
 /* For tablets and mobile phones */
 @media only screen and (max-width: 768px) {
   section.experience, section.about, section.projects {
+    width: 100%;
+  }
+}
+/* Fill some space with asciiart if screen is too wide */
+@media only screen and (max-width: 1000px) {
+  section#asciiart, section#gpgkeys {
     width: 100%;
   }
 }
@@ -239,4 +263,15 @@ a:active {
   float: right;
   font-size: 1rem;
   font-weight: normal;
+}
+
+pre {
+  overflow: auto;
+  display: block;
+  padding: 8pt;
+  margin: 10pt 1em 20pt 1em;
+  font-size: 12pt;
+  line-height: 2;
+  color: #cdd6f4;
+  background-color: #11111b;
 }
