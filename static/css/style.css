@@ -18,7 +18,7 @@ body, html {
   margin: 0px;
   padding: 0px;
   color: #cdd6f4;
-  background: #1e1e2e;
+  background: #181825;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -56,11 +56,12 @@ main {
 	height: calc(var(--main-height) - var(--nav-height) - var(--footer-height));
 	width: var(--main-width);
 	margin: auto;
+  background: #1e1e2e; 
 
 	/* Allow scrolling overflow content within */
 	overflow: auto;
 	margin-top: calc((100% - var(--main-height))/4);
-	border: thin solid #4A4A57;
+	border: thin solid #313244;
 }
 footer {
 	height: var(--footer-height);
@@ -189,6 +190,18 @@ li::before {
 }
 .navlinks li::before {
   display: none;
+}
+
+a.navlink:link, a.navlink:visited {
+  text-decoration: none;
+  font-weight: bold;
+  color: #89b4fa;
+}
+a.navlink:hover {
+  color: #f4a6f7;
+}
+a.navlink:active {
+  color: #f5c2e7;
 }
 
 .jobdescription, .description {
