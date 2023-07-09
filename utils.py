@@ -3,32 +3,33 @@ Convert from the number of a month to a three-letter abbreviation for that
 month. If month is not in range (1, 12), will return "Err."
 """
 def num2month(num):
-    if num == 1:
-        return "Jan"
-    elif num == 2:
-        return "Feb"
-    elif num == 3:
-        return "Mar"
-    elif num == 4:
-        return "Apr"
-    elif num == 5:
-        return "May"
-    elif num == 6:
-        return "Jun"
-    elif num == 7:
-        return "Jul"
-    elif num == 8:
-        return "Aug"
-    elif num == 9:
-        return "Sep"
-    elif num == 10:
-        return "Oct"
-    elif num == 11:
-        return "Nov"
-    elif num == 12:
-        return "Dec"
-    else:
-        return "Err"
+    match num:
+        case 1:
+            return "Jan"
+        case 2:
+            return "Feb"
+        case 3:
+            return "Mar"
+        case 4:
+            return "Apr"
+        case 5:
+            return "May"
+        case 6:
+            return "Jun"
+        case 7:
+            return "Jul"
+        case 8:
+            return "Aug"
+        case 9:
+            return "Sep"
+        case 10:
+            return "Oct"
+        case 11:
+            return "Nov"
+        case 12:
+            return "Dec"
+        case _: # default case
+            return "Err"
 
 """
 Convert from a string start_date and end_date to HTML code that describes the
