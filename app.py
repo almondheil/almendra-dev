@@ -32,7 +32,8 @@ def index():
 
     # render the page
     return render_template('index.html', projects=projects,
-                           experience=experience)
+                           experience=experience, title='homepage',
+                           fakepath='~')
 #
 # Public Keys
 #
@@ -41,16 +42,18 @@ def public_keys():
     conn = get_db_connection()
     keys = conn.execute("SELECT * FROM keys").fetchall()
     conn.close()
-    return render_template('public_keys.html', keys=keys)
+    return render_template('public_keys.html', keys=keys,
+                           title='public_keys')
 
 #
 # Resume
 #
 @app.route('/resume')
 def resume():
-    return render_template('resume.html')
+    return render_template('resume.html', title='resume')
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.html', title='404',
+                           fakepath='/dev/null'), 404

@@ -8,16 +8,29 @@
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}" type="text/css" media="screen" charset="utf-8">
 
-    <title>{% block title %} {% endblock %} - almendra.dev</title>
+    <title>
+      {% if title %}
+        {{title}} - almendra.dev
+      {% else %}
+        almendra.dev
+      {% endif %}
+    </title>
   </head>
   <body>
     <nav class=topnav>
-      <p class="dim indented">[web@almendra]$ ls</p> 
+      <p class="dim indented">
+        {% if fakepath %}
+          [web@almendra {{fakepath}}]$ nav --list
+        {% elif title %}
+          [web@almendra ~/{{title}}]$ nav --list
+        {% else %}
+          [web@almendra ~]$ nav --list
+        {%endif %}
+      </p> 
       <ul class="navlinks indented">
-        <li><a href="{{ url_for('index') }}">homepage/</a></li>
-        <li><a href="{{ url_for('public_keys') }}">public_keys/</a></li>
-        <li><a href="{{ url_for('resume') }}">resume/</a></li>
-        <li><a href="https://github.com/almondheil/" target="_blank">github/</a></li>
+        <li><a class="navlink" href="{{ url_for('index') }}">homepage/</a></li>
+        <li><a class="navlink" href="{{ url_for('public_keys') }}">public_keys/</a></li>
+        <li><a class="navlink" href="{{ url_for('resume') }}">resume/</a></li>
       </ul>
     </nav>
     <!-- TODO DO NAV STUFF, IT'S IN THE TUTORIAL -->
@@ -25,7 +38,7 @@
       {% block content %} {% endblock %}
     </main>
     <footer class=footer>
-      © 2023 Almond Heil
+      © 2023 almond heil
     </footer>
   </body>
 </html>
