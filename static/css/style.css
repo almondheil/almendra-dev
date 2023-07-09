@@ -28,17 +28,17 @@ body {
 }
 
 :root {
-  --main-width: 90%;
-  --main-height: 95%;
-  --cmd-height: 35pt;
+  --content-width: 90%;
+  --content-height: 90%;
+  --cmd-height: 40pt;
 }
 
-main {
-  width: var(--main-width);
-  height: calc(var(--main-height) - var(--cmd-height));
+.content {
+  width: var(--content-width);
+  height: calc(var(--content-height) - var(--cmd-height));
   overflow: auto;
   margin: auto;
-  margin-top: calc((100% - var(--main-height))/4);
+  margin-top: calc((100% - var(--content-height))/4);
   border: thin solid #4A4A57;
 }
 

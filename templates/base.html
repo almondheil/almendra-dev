@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}" type="text/css" media="screen" charset="utf-8">
+
+    <title>{% block title %} {% endblock %} - almendra.dev</title>
+  </head>
+  <body>
+    <nav class=padded id="command-area">
+      <p>user@almendra $ ls</p> 
+      <p>TEST ONE TWO THREE</p>
+    </nav>
+    <!-- TODO DO NAV STUFF, IT'S IN THE TUTORIAL -->
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
+

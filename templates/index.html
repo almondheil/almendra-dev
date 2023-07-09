@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mid grid-container">
+  <section id="info" itemscope itemtype="http://schema.org/Person">
+    <div class="padded">
+      <h1 itemprop="name">almond heil - {% block title %} homepage {% endblock %}
+        <div class="links">
+          download:
+          <a itemprop="resume" rel="me" href="./download/AlmondHeil-Resume.pdf" download>resume</a>
+          <a itemprop="ssh key" rel="me" href="./download/almondheil.pub" download>ssh</a>
+          <a itemprop="gpg key" rel="me" href="./download/almondheil.pgp" download>pgp</a>
+        </div>
+      </h1>
+      <address>
+        <ul class="contactinfo">
+          <li class="padded" itemprop="gender">it / they <a target="_blank" href="https://pronouns.org/what-and-why">(why I share)</a></li>
+          <li class="padded" itemprop="email"><a rel="me" href="mailto:contact@almendra.dev">contact [at] almendra.dev</a></li>
+          <li class="padded" itemprop="github"><a rel="me" target="_blank" href="https://github.com/almondheil">github.com/almondheil</a></li>
+        </ul>
+      </address>
+    </div>
+  </section>
+  <section id="about" itemscope itemtype="http://schema.org/ItemList">
+    <div class="padded">
+      <h2 itemprop="name">about me 👋</h2>
+      <div class="indented" itemtype="http://schema.org/Text">
+        <p>
+        Hi there! My name is Almond, and I like messing around with computers.
+        </p>
+        <p>
+        I'm an undergrad at
+        <a target="_blank" href="https://www.grinnell.edu/">Grinnell College</a>
+        majoring in Computer Science, but also dabbling in pure math,
+        linguistics, and theater. In order of my favorites, I'm comfortable
+        programming in C, Haskell, Python, and Java.
+        </p>
+        <p>
+        You may know me as that nerd who uses Linux on their personal computer
+        for the hell of it, and you won't be hard pressed to find me pulling up
+        the terminal to try my hand at bash wizardry.
+        </p>
+        <p>
+        I find a lot of joy in sysadmin, but I also love working as a peer
+        educator. 
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="experience" itemscope itemtype="http://schema.org/ItemList">
+    <div class="padded">
+      <h2 itemprop="name">experience 🔍</h2>
+      <ul>
+      {% for e in experience %}
+        <li itemprop="itemListElement">
+          <p class="timeplace">
+            <!-- Render formatted date as HTML -->
+            {{ e['formatted_date'] | safe }}
+            <span class="employer"><a href="{{ e['url'] }}" target="_blank">{{ e['name'] }}</a></span>
+          </p>
+          <p class="jobinfo">
+            <p class="jobtitle">{{ e['position'] }}</p>
+            <p class="jobdescription">{{ e['description'] }}</p>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <section id="projects" itemscope itemtype="http://schema.org/ItemList">
+    <div class="padded">
+      <h2 itemprop="name">projects 📕</h2>
+      <ul>
+      {% for p in projects %}
+        <li itemprop="itemListElement">
+          <p class="projectlink">
+            <a target="_blank" href="{{ p['url'] }}">
+              {{ p['url'] }}
+            </a>
+          </p>
+          <p class="description"> {{ p['description'] }} </p>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

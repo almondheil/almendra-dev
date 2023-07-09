@@ -1,8 +1,3 @@
-# PDF resume I have uploaded
-RayHeil-Resume*.pdf
-
-# Custom fonts in the font/ directory
-font/
-
-# SSH Public Key
-jelly-donut.pub
+# Python things now that I'm using flask
+env/*
+__pycache__/*
