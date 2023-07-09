@@ -1,215 +1,86 @@
 * {
   box-sizing: border-box;
   font-family: 'Source Code Pro', monospace, monospace; 
-}
 
-body, html {
-  margin: 0px;
-  padding: 0px;
-  color: #cdd6f4;
-  background: #1e1e2e;
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  font-size: 12pt;
-}
-h1,h2,h3,h4,h5,h6 {
-  font-family: inherit;
+	/* Reset everything to keep navbar flush to top 
+	 * and reduce formatting irregularities */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
 
 body {
-  width: 100%;
+	width: 100%;
   height: 100vh;
   position: relative;
   display: flow-root;
+	background-color: yellow;
 }
 
 :root {
-  --content-width: 90%;
-  --content-height: 90%;
-  --cmd-height: 40pt;
+	--nav-height: 35pt;
+	--main-height: 90%;
+	--main-width:  90%;
+	--footer-height: 20pt;
 }
 
+/* Set up nav, footer, and .content to all appear on one
+ * view of the page. */
+nav {
+	height: var(--nav-height);
+	margin: auto;
+	background-color: blue;
+}
+footer {
+	/* Right now the footer shows up with a LITTLE space after it
+	 * before the page ends, but I'm gonna just let it be for now. */
+	height: var(--footer-height);
+	margin: auto;
+	background-color: red;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+} 
 .content {
-  width: var(--content-width);
-  height: calc(var(--content-height) - var(--cmd-height));
-  overflow: auto;
-  margin: auto;
-  margin-top: calc((100% - var(--content-height))/4);
-  border: thin solid #4A4A57;
-}
-
-#command-area {
-  height: var(--cmd-height);
-  margin: auto;
-  color: #a5acc5;
+	height: calc(var(--main-height) - var(--nav-height) - var(--footer-height));
+	width: var(--main-width);
+	/* allow scrolling overflow content within */
+	overflow: auto;
+	margin: auto;
+	margin-top: calc((100% - var(--main-height))/4);
+	border: thin solid #4A4A57;
+	background-color: green;
 }
 
 section {
-  overflow: hidden;
+	overflow: hidden;
+}
+
+.projects {
+}
+.experience {
+}
+.about {
+}
+.info {
 }
 
 .padded {
-  padding: 0.4em;
+	padding: 0.4em;
 }
-
 .indented {
-  padding-left: 1em;
+	padding-left: 1em;
+}
+.dim {
 }
 
-#info, #experience, #projects, #skills, #education {
-  font-family: 'Hack', monospace, monospace;
-}
-#education, #skills, #experience, #projects {
-  border-top: none;
-}
-#info, #skills, #experience, #projects {
-  border-bottom: none;
-}
-#experience {
-  border-right: none;
-}
-#projects {
-  border-left: none;
-}
-
-section#info {
-}
-
-div.mid {
-  height: auto;
-  overflow: hidden;
-}
-
-section#experience {
-  float: right;
-  width: 50%;
-}
-section#about {
-  float: left;
-  width: 50%;
-}
-section#projects {
-  float: left;
-  width: 50%;
-}
-@media only screen and (max-width: 768px) {
-  /* For tablets and mobile phones */
-  section#experience, section#about, section#projects {
-    width: 100%;
-  }
-}
-
-
-h1,h2,h3,h4,h5,h6 {
-  font-size: 12pt;
-}
-
-h1 {
-  font-weight: bold;
-  letter-spacing: 1.2pt;
-}
-
-h2 {
-  font-weight: bold;
-  margin-top: 4pt;
-  letter-spacing: 1pt;
-}
-
-address {
-  font-style: normal;
-}
-
-ul {
-  margin-left: 0;
-  list-style: none;
-}
-
-li {
-  position: relative;
-}
-
-li::before {
-  content: ">";
-  left: -1.2em;
-  position: absolute;
-}
-
-#info address {
-  display: inline-block;
-}
-.contactinfo {
-  list-style: none;
-  display: inline-block;
-}
-.contactinfo li {
-  display: inline-block;
-  position: relative;
-}
-.contactinfo li::before {
-  display: none;
-}
-
-p.timeplace > address {
-  display: inline !important;
-}
-
-.jobdescription, .description {
-  margin-top: 2pt;
-  margin-left: 0.8em;
-  font-size: 10pt;
-}
-
-section#info .description {
-  margin-top: 1em;
-}
-
-.jobtitle {
-  font-style: italic;
-}
-
-li + li {
-  margin-top: 4pt;
-}
-
-a {
-  color: #89b4fa;
-}
-
-a:visited {
-  color: #cba6f7;
-}
-
-section#skills {
-  clear: both;
-}
-
-.cf:before {
-  content: " ";
-  display: table;
-}
-.cf:after {
-  clear: both;
-}
-
-.cf {
-  *zoom: 1;
-}
-
-p.achievments {
-  margin-top: 4pt;
-  font-size: 10pt;
-}
-
-.education, .award {
-  font-style: italic;
-}
-
-.links {
-  float: right;
-  font-size: 1rem;
-  font-weight: normal;
+h1#err404 {
+	color: red;
+	font-size: 30pt;
 }

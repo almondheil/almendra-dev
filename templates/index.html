@@ -1,85 +1,104 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="mid grid-container">
-  <section id="info" itemscope itemtype="http://schema.org/Person">
-    <div class="padded">
-      <h1 itemprop="name">almond heil - {% block title %} homepage {% endblock %}
-        <div class="links">
-          download:
-          <a itemprop="resume" rel="me" href="./download/AlmondHeil-Resume.pdf" download>resume</a>
-          <a itemprop="ssh key" rel="me" href="./download/almondheil.pub" download>ssh</a>
-          <a itemprop="gpg key" rel="me" href="./download/almondheil.pgp" download>pgp</a>
-        </div>
-      </h1>
-      <address>
-        <ul class="contactinfo">
-          <li class="padded" itemprop="gender">it / they <a target="_blank" href="https://pronouns.org/what-and-why">(why I share)</a></li>
-          <li class="padded" itemprop="email"><a rel="me" href="mailto:contact@almendra.dev">contact [at] almendra.dev</a></li>
-          <li class="padded" itemprop="github"><a rel="me" target="_blank" href="https://github.com/almondheil">github.com/almondheil</a></li>
-        </ul>
-      </address>
-    </div>
-  </section>
-  <section id="about" itemscope itemtype="http://schema.org/ItemList">
-    <div class="padded">
-      <h2 itemprop="name">about me 👋</h2>
-      <div class="indented" itemtype="http://schema.org/Text">
-        <p>
+<section class="info" itemscope itemtype="http://schema.org/Person">
+  <div class="padded">
+    <h1 itemprop="name">almond heil - {% block title %} homepage {% endblock %}</h1>
+    <!-- TODO: relocate these links somewhere less weird
+      <div class="links">
+      download:
+      <a itemprop="resume" rel="me" href="./download/AlmondHeil-Resume.pdf" download>resume</a>
+      <a itemprop="ssh key" rel="me" href="./download/almondheil.pub" download>ssh</a>
+      <a itemprop="gpg key" rel="me" href="./download/almondheil.pgp" download>pgp</a>
+      </div>
+    -->
+    </h1>
+    <address>
+      <ul class="contactinfo">
+        <li class="padded" itemprop="gender">it / they <a target="_blank" href="https://pronouns.org/what-and-why">(why I share)</a></li>
+        <li class="padded" itemprop="email"><a rel="me" href="mailto:contact@almendra.dev">contact [at] almendra.dev</a></li>
+        <!-- TODO maybe relocate github to its own page? IDK -->
+        <li class="padded" itemprop="github"><a rel="me" target="_blank" href="https://github.com/almondheil">github.com/almondheil</a></li>
+      </ul>
+    </address>
+  </div>
+</section>
+
+<!-- Section: About Me -->
+<section class="about" itemscope itemtype="http://schema.org/ItemList">
+  <div class="padded">
+    <h2 itemprop="name">about me 👋</h2>
+    <div class="indented" itemtype="http://schema.org/Text">
+      <p>
         Hi there! My name is Almond, and I like messing around with computers.
-        </p>
-        <p>
+      </p>
+      <p>
         I'm an undergrad at
         <a target="_blank" href="https://www.grinnell.edu/">Grinnell College</a>
         majoring in Computer Science, but also dabbling in pure math,
-        linguistics, and theater. In order of my favorites, I'm comfortable
-        programming in C, Haskell, Python, and Java.
-        </p>
-        <p>
+        linguistics, theater, and anything else that catches my attention. In
+        order of my favorites, I'm comfortable programming in C, Haskell,
+        Python, and Java.
+      </p>
+      <p>
         You may know me as that nerd who uses Linux on their personal computer
         for the hell of it, and you won't be hard pressed to find me pulling up
         the terminal to try my hand at bash wizardry.
-        </p>
-        <p>
-        I find a lot of joy in sysadmin, but I also love working as a peer
-        educator. 
-        </p>
-      </div>
+      </p>
+      <p>
+        When it comes to computing, I have two major interests: sysadmin and
+        peer education. Are these things very different? Yes. But working on
+        both of them brings me a lot of joy, and I don't see myself stopping
+        anytime soon.
+      </p>
+      <p>
+        My favorite computer relatex activities include tinkering with
+        various projects, manager, playing Celeste, and breaking my window
+        manager every other week. My favorite NON-computer related
+        activities, on the other hand, include hiking, reading (mostly
+        mystery and scifi), and coming up with new words to confuse my family
+        and friends with.
+      </p>
     </div>
-  </section>
-  <section id="experience" itemscope itemtype="http://schema.org/ItemList">
-    <div class="padded">
-      <h2 itemprop="name">experience 🔍</h2>
-      <ul>
+  </div>
+</section>
+
+<!-- Section: Experience -->
+<section class="experience" itemscope itemtype="http://schema.org/ItemList">
+  <div class="padded">
+    <h2 itemprop="name">experience 🔍</h2>
+    <ul>
       {% for e in experience %}
-        <li itemprop="itemListElement">
-          <p class="timeplace">
-            {{ e['formatted_date'] | safe }}
-            <span class="employer"><a href="{{ e['url'] }}" target="_blank">{{ e['name'] }}</a></span>
-          </p>
-          <p class="jobinfo">
-            <p class="jobtitle">{{ e['position'] }}</p>
-            <p class="jobdescription">{{ e['description'] }}</p>
-        </li>
+      <li itemprop="itemListElement">
+        <p class="timeplace">
+          {{ e['formatted_date'] | safe }}
+          <span class="employer"><a href="{{ e['url'] }}" target="_blank">{{ e['name'] }}</a></span>
+        </p>
+        <p class="jobinfo">
+          <p class="jobtitle">{{ e['position'] }}</p>
+          <p class="jobdescription">{{ e['description'] }}</p>
+      </li>
       {% endfor %}
-      </ul>
-    </div>
-  </section>
-  <section id="projects" itemscope itemtype="http://schema.org/ItemList">
-    <div class="padded">
-      <h2 itemprop="name">projects 📕</h2>
-      <ul>
+    </ul>
+  </div>
+</section>
+
+<!-- Section: Projects -->
+<section class="projects" itemscope itemtype="http://schema.org/ItemList">
+  <div class="padded">
+    <h2 itemprop="name">projects 📕</h2>
+    <ul>
       {% for p in projects %}
-        <li itemprop="itemListElement">
-          <p class="projectlink">
-            <a target="_blank" href="{{ p['url'] }}">
-              {{ p['url'] }}
-            </a>
-          </p>
-          <p class="description"> {{ p['description'] }} </p>
-        </li>
+      <li itemprop="itemListElement">
+        <p class="projectlink">
+          <a target="_blank" href="{{ p['url'] }}">
+            {{ p['url'] }}
+          </a>
+        </p>
+        <p class="description"> {{ p['description'] }} </p>
+      </li>
       {% endfor %}
-      </ul>
-    </div>
-  </section>
+    </ul>
+  </div>
+</section>
 {% endblock %}

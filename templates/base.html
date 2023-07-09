@@ -11,14 +11,22 @@
     <title>{% block title %} {% endblock %} - almendra.dev</title>
   </head>
   <body>
-    <nav class=padded id="command-area">
-      <p>user@almendra $ ls</p> 
-      <p>TEST ONE TWO THREE</p>
+    <nav class=topnav>
+      <p class=dim>[web@almendra]$ ls</p> 
+      <ul>
+        <li><a href="{{ url_for('index') }}">homepage/</a></li>
+        <li><a href="{{ url_for('public_keys') }}">public_keys/</a></li>
+        <li><a href="{{ url_for('resume') }}">resume/</a></li>
+        <li><a href="https://github.com/almondheil/" target="_blank">github/</a></li>
+      </ul>
     </nav>
     <!-- TODO DO NAV STUFF, IT'S IN THE TUTORIAL -->
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
+    <main class=content>
+      {% block content %} {% endblock %}
+    </main>
+    <footer class=footer>
+      © 2023 Almond Heil
+    </footer>
   </body>
 </html>
 
