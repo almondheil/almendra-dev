@@ -4,3 +4,6 @@ __pycache__/*
 
 # sqlite3 database
 database.db
+
+# host specific config
+config.py
