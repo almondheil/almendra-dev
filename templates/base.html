@@ -23,11 +23,11 @@
     <nav class=topnav>
       <p class="dim indented">
         {% if fakepath %}
-          [web@almendra {{fakepath}}]$ nav --list
+          [web@almendra {{fakepath}}]$ nav ls
         {% elif title %}
-          [web@almendra ~/{{title}}]$ nav --list
+          [web@almendra ~/{{title}}]$ nav ls
         {% else %}
-          [web@almendra ~]$ nav --list
+          [web@almendra ~]$ nav ls
         {%endif %}
       </p> 
       <ul class="navlinks indented">
@@ -36,7 +36,6 @@
         <li><a class="navlink" href="{{ url_for('resume') }}">resume/</a></li>
       </ul>
     </nav>
-    <!-- TODO DO NAV STUFF, IT'S IN THE TUTORIAL -->
     <main class=content>
       {% block content %} {% endblock %}
     </main>
