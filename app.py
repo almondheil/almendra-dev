@@ -22,7 +22,7 @@ def index():
     # get data from mysql
     conn = get_db_connection()
     projects = conn.execute("SELECT * FROM projects ORDER BY added DESC").fetchall()
-    experience_raw = conn.execute("SELECT * FROM experience ORDER BY start_time DESC, end_time DESC").fetchall()
+    experience_raw = conn.execute("SELECT * FROM experience ORDER BY end_time DESC, start_time DESC").fetchall()
     conn.close()
 
     # process the experience data to add pretty dates
