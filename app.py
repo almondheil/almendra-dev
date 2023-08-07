@@ -44,11 +44,7 @@ def index():
 #
 @app.route('/public_keys')
 def public_keys():
-    conn = get_db_connection()
-    keys = conn.execute("SELECT * FROM keys").fetchall()
-    conn.close()
-    return render_template('public_keys.html', keys=keys,
-                           title='public_keys')
+    return render_template('public_keys.html', title='public_keys')
 
 #
 # Resume
