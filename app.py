@@ -51,7 +51,7 @@ def public_keys():
 #
 @app.route('/resume')
 def resume():
-    return send_file('static/pdf/AlmondHeil-Resume.pdf')
+    return send_file('static/pdf/almondheil-Resume.pdf')
 
 #
 # 404 error page
