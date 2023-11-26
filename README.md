@@ -1,6 +1,6 @@
 # almendra.dev
 
-Git repo for my website.
+GitHub repo for my website.
 
 # License
 
