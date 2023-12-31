@@ -1,9 +1,6 @@
-# Python things now that I'm using flask
-env/*
-__pycache__/*
+/public/
+/resources/_gen/
 
-# sqlite3 database
-database.db
-
-# host specific config
-config.py
+hugo.exe
+hugo.linux
+hugo.darwin
